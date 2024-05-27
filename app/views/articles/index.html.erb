@@ -1,0 +1,14 @@
+<nav class="navbar d-flex navbar-light bg-light p-4">
+  <h3 display-3>Wikinimous</h3>
+
+  <div class="d-flex">
+    <a class="btn btn-primary" href="/articles/new">New Article</a>
+  </div>
+</nav>
+
+<div class="container">
+  <% @articles.each do |article| %>
+    <h2><%= link_to article.title, article_path(article.id) %></h2>
+    <p class="text-break"><%= article.content %></p>
+  <% end %>
+</div>
