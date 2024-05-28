@@ -12,6 +12,7 @@ require 'faker'
 10.times do
   Article.create(
     title: Faker::Book.title,
-    content: Faker::Lorem.paragraph(sentence_count: 10)
+    content: Faker::Lorem.paragraph(sentence_count: 50),
+    quotes: Faker::Quotes::Shakespeare.hamlet_quote
   )
 end

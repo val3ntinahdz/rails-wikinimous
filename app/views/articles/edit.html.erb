@@ -1,13 +1,13 @@
-<nav class="navbar d-flex navbar-light bg-light p-4">
-  <h3 display-3>Wikinimous</h3>
+<nav class="navbar d-flex navbar-light bg-light p-3">
+  <h5 class="fw-normal">Wikinimous</h5>
 
   <div class="d-flex">
     <a class="btn btn-primary" href="/articles/new">New Article</a>
   </div>
 </nav>
 
-<div class='container mt-4'>
-<h1 class="display-4">Editing Article</h1>
+<div class='container w-75 p-3'>
+<h2 class="display-4 fw-normal">Editing Article</h2>
   <%= form_with model: @article do |a| %>
     <div class='mb-3'>
       <%= a.label :title, class: 'form-label' %>

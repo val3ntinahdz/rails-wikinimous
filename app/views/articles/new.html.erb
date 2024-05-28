@@ -1,9 +1,26 @@
-<%= form_with model: @article do |a| %>
-  <%= a.label :title %>
-  <%= a.text_field :title %>
-  <%= a.label :content %>
-  <%= a.text_field :content %>
-  <%= a.submit %>
-<% end %>
+<nav class="navbar d-flex navbar-light bg-light p-3">
+  <h5 class="fw-normal">Wikinimous</h5>
 
-<%= link_to "← Back", articles_path %>
+  <div class="d-flex">
+    <a class="btn btn-primary" href="/articles/new">New Article</a>
+  </div>
+</nav>
+
+<div class='container w-75 p-4'>
+<h2 class="display-4 fw-normal">New Article</h2>
+  <%= form_with model: @article do |a| %>
+    <div class='mb-3'>
+      <%= a.label :title, class: 'form-label' %>
+      <%= a.text_field :title, class: 'form-control' %>
+    </div>
+    <div class='mb-3'>
+      <%= a.label :content, class: 'form-label' %>
+      <div id="ace-editor" style="height: 300px; width: 100%;" class="form-control"></div>
+      <%= a.hidden_field :content, id: 'article_content' %>
+    </div>
+    <%= a.submit "Create Article", class: 'btn btn-primary' %>
+  <% end %>
+  <div class="mt-3">
+  <%= link_to "Back", articles_path %>
+  </div>
+</div>

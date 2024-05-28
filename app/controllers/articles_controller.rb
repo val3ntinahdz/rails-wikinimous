@@ -14,7 +14,8 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to articles_path
+      flash[:notice] = "Article was successfully created."
+      redirect_to @article
     else
       render :new, status: :unprocessable_entity
     end
