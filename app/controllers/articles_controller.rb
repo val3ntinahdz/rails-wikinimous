@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   def update
     @article.update(article_params)
     if @article.save
-      redirect_to articles_path
+      redirect_to @article
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to articles_path, status: :see_other
+    redirect_to articles_url, status: :see_other
   end
 
   private
